@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cadastro.css" />
+    <title>Register</title>
+</head>
+<body>
+<div class="container">
+    <form th:object="${paciente}" th:action="@{/pacientes}" method="post">
+        <div>
+            <div class="form-header">
+                <div class="titulo">
+                    <h1>Cadastre-se</h1>
+                </div>
+            </div>
+            <div class="input-box">
+                <label for="name"><strong>Nome</strong></label>
+                <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        th:field="*{name}"
+                        class="form-control"
+                        placeholder="Digite seu nome completo"
+                        required
+                />
+            </div>
+            <div class="input-box">
+                <label for="email"><strong>Email</strong></label>
+                <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        th:field="*{email}"
+                        class="form-control"
+                        placeholder="Digite seu Email"
+                        required
+                />
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="cpf"><strong>CPF</strong></label>
+                    <input
+                            type="text"
+                            name="cpf"
+                            id="cpf"
+                            maxlength="14"
+                            th:field="*{cpf}"
+                            class="form-control"
+                            placeholder="xxx.xxx.xxx-xx"
+                            required
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="cellPhone"><strong>Telefone</strong></label>
+                    <input
+                            type="text"
+                            name="telefone"
+                            id="cellPhone"
+                            th:field="*{cellPhone}"
+                            class="form-control"
+                            placeholder="(xx) xxxxx-xxxx"
+                            required
+                    />
+                </div>
+            </div>
+
+            <div class="gender-inputs">
+                <div class="gender-title">
+                    <h6><strong>Gênero</strong></h6>
+                </div>
+            </div>
+            <div class="gender-group">
+                <div class="gender-input">
+                    <input type="radio" id="female" name="gender" th:field="*{gender}" class="form-control"/>
+                    <label for="female">Feminino</label>
+                </div>
+                <div class="gender-input">
+                    <input type="radio" id="male" name="gender" th:field="*{gender}" class="form-control"/>
+                    <label for="male">Masculino</label>
+                </div>
+                <div class="gender-input">
+                    <input type="radio" id="others" name="gender" th:field="*{gender}" class="form-control"/>
+                    <label for="others">Outros</label>
+                </div>
+                <div class="gender-input">
+                    <input type="radio" id="none" name="gender" th:field="*{gender}" class="form-control"/>
+                    <label for="none">Prefiro não dizer</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="address"><strong>Endereço</strong></label>
+                    <input
+                            type="text"
+                            nome="address"
+                            id="address"
+                            th:field="*{address}"
+                            class="form-control"
+                            placeholder="Digite seu endereço"
+                            required
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="bairro"><strong>Bairro</strong></label>
+                    <input
+                            type="text"
+                            name="bairro"
+                            id="bairro"
+                            th:field="*{address}"
+                            class="form-control"
+                            placeholder="Digite seu bairro"
+                            required
+                    />
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="cep"><strong>CEP</strong></label>
+                    <input
+                            type="text"
+                            name="cep"
+                            id="cep"
+                            th:field="*{address}"
+                            class="form-control"
+                            placeholder="Digite seu CEP"
+                            required
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="city"><strong>Cidade</strong></label>
+                    <input
+                            type="text"
+                            name="city"
+                            id="city"
+                            th:field="*{address}"
+                            class="form-control"
+                            placeholder="Digite sua cidade"
+                            required
+                    />
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="state"><strong>Estado</strong></label>
+                    <input
+                            type="text"
+                            name="state"
+                            id="state"
+                            th:field="*{address}"
+                            class="form-control"
+                            placeholder="Digite seu estado"
+                            required
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="country"><strong>País</strong></label>
+                    <input
+                            type="text"
+                            name="country"
+                            id="country"
+                            th:field="*{address}"
+                            class="form-control"
+                            placeholder="Digite seu pais"
+                            required
+                    />
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="nascimento"><strong>Data de Nascimento</strong></label>
+                    <input type="date" name="nascimento" id="nascimento" th:field="*{nascimento}" required />
+                </div>
+
+                <div class="input-box">
+                    <label for="estado-civil"><strong>Estado civil</strong></label>
+                    <select name="estado-civil" id="estado-civil" th:field="*{civilStatus}" class="form-control">
+                        <option value="">Casado(a)</option>
+                        <option value="">Divorciado(a)</option>
+                        <option value="">Viúvo(a)</option>
+                        <option value="">Solteiro(a)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="num-sus"><strong>Número do SUS</strong></label>
+                    <input
+                            type="text"
+                            name="num-sus"
+                            id="num-sus"
+                            th:field="*{sus}"
+                            class="form-control"
+                            placeholder="Digite o n° do SUS"
+                            maxlength="18"
+                            pattern="\d{3}\.\d{4}\.\d{4}\.\d{4}"
+                            required
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="sangue"><strong>Tipo sanguíneo</strong></label>
+                    <input
+                            type="text"
+                            name="sangue"
+                            id="sangue"
+                            th:field="*{bloodType}"
+                            class="form-control"
+                            placeholder="Digite seu tipo sanguíneo"
+                    />
+                </div>
+            </div>
+
+            <div class="input-password">
+                <div class="input-box">
+                    <label for="password"><strong>Digite uma senha</strong></label>
+                    <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            th:field="*{password}"
+                            class="form-control"
+                            placeholder="Digite sua senha"
+                            minlength="8"
+                            required
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="confirmar-senha"><strong>Confirme a senha</strong></label>
+                    <input
+                            type="password"
+                            name="confirmar-senha"
+                            id="confirmar-senha"
+                            th:field="*{password}"
+                            class="form-control"
+                            placeholder="Confirme a senha"
+                            minlength="8"
+                    />
+                </div>
+            </div>
+
+            <div class="continue-button">
+                <input type="submit" class="btn btn-primary" value="Enviar" />
+            </div>
+            <input type="hidden" th:field="*{id}">
+        </div>
+    </form>
+</div>
+</body>
+</html>

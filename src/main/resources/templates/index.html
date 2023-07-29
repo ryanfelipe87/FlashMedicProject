@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="satic.styless/login.css" />
+</head>
+<body>
+<div class="box">
+    <div class="img-box">
+        <img src="login.avif" />
+        <div class="form-box">
+            <img src="TítuloLogin.jpeg" />
+            <form action="/login" method="post">
+                <div>
+                    <div class="input-group">
+                        <label for="email" class="col-form-label"> Usuário</label>
+                        <input type="text"
+                                id="user"
+                                placeholder="Digite seu email"
+                                required/>
+                    </div>
+                    <div class="input-group">
+                        <label for="password" class="col-form-label">Senha</label>
+                        <input type="password"
+                                id="password"
+                                placeholder="Insira seu senha"
+                                required/>
+                    </div>
+
+                    <div class="input-group">
+                        <p><a href="#">Esqueceu a senha?</a></p>
+                    </div>
+
+                    <div class="button-entrar">
+                        <input type="submit" class="btn btn-primary" value="Entrar" />
+                    </div>
+
+                    <div class="cadastro-button">
+                        <input type="submit" class="btn btn-primary" value="Cadastrar" />
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
