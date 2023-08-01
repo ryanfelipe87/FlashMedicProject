@@ -19,18 +19,10 @@ public class User {
     private Long id;
 
     @Column
-    @NotBlank(message = "Este campo não pode estar vazio")
-    private String email;
-
-    @Column
-    @NotBlank(message = "Este campo não pode estar vazio")
-    private String password;
-
-    @Column
     private Timestamp dateRegister;
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
 }

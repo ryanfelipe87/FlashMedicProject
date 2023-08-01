@@ -20,25 +20,27 @@ public class PacienteController {
     PacienteService pacienteService;
 
     //Exibe um novo formulário
-    @GetMapping("/registerPaciente")
-    public String form(){
-        return "flash/formPaciente";
+    @GetMapping("/formPaciente")
+    public String formPaciente(Model model){
+        model.addAttribute("pacientes", new Paciente());
+        return "formPaciente";
     }
 
     //Cria um novo paciente validando os campos
     @PostMapping("/registerPaciente")
-    public String createPaciente(@Valid Paciente paciente, BindingResult result, RedirectAttributes attributes){
+    public String createPaciente(@Valid Paciente paciente, BindingResult result, RedirectAttributes attributes, Model model){
         if(result.hasErrors()){
+            model.addAttribute("pacientes", paciente);
             attributes.addFlashAttribute("mensagem", "Verifique os campos");
-            return "redirect:/registerPaciente";
+            return "formPaciente";
         }
         pacienteService.addPaciente(paciente);
         attributes.addFlashAttribute("mensagem", "Paciente cadastrado com sucesso!");
-        return "redirect:/registerPaciente";
+        return "login";
     }
 
     //Lista todos os pacientes
-    @GetMapping("/pacientes")
+    @GetMapping("/pacientes/list")
     public ModelAndView findAll(){
         //Renderiza para a página de index onde aparecem os dados da lista
         ModelAndView mv = new ModelAndView("login");
@@ -61,7 +63,7 @@ public class PacienteController {
         }
     }
     //Atualiza dados do paciente
-    @PostMapping("/pacientes/edit/{id}")
+    @PutMapping("/pacientes/update/{id}")
     public String updatePaciente(@PathVariable Long id, @ModelAttribute Paciente paciente){
         paciente.setId(id);
         pacienteService.updatePaciente(paciente);

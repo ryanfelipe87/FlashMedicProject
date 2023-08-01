@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <form th:object="${paciente}" th:action="@{/pacientes}" method="post">
+    <form th:object="${paciente}" th:action="@{/registerPaciente}" method="post">
         <div>
             <div class="form-header">
                 <div class="titulo">
@@ -21,7 +21,6 @@
                         type="text"
                         name="name"
                         id="name"
-                        th:field="*{name}"
                         class="form-control"
                         placeholder="Digite seu nome completo"
                         required
@@ -33,7 +32,6 @@
                         type="text"
                         name="email"
                         id="email"
-                        th:field="*{email}"
                         class="form-control"
                         placeholder="Digite seu Email"
                         required
@@ -47,7 +45,6 @@
                             name="cpf"
                             id="cpf"
                             maxlength="14"
-                            th:field="*{cpf}"
                             class="form-control"
                             placeholder="xxx.xxx.xxx-xx"
                             required
@@ -60,7 +57,6 @@
                             type="text"
                             name="telefone"
                             id="cellPhone"
-                            th:field="*{cellPhone}"
                             class="form-control"
                             placeholder="(xx) xxxxx-xxxx"
                             required
@@ -75,19 +71,19 @@
             </div>
             <div class="gender-group">
                 <div class="gender-input">
-                    <input type="radio" id="female" name="gender" th:field="*{gender}" class="form-control"/>
+                    <input type="radio" id="female" name="gender" class="form-control"/>
                     <label for="female">Feminino</label>
                 </div>
                 <div class="gender-input">
-                    <input type="radio" id="male" name="gender" th:field="*{gender}" class="form-control"/>
+                    <input type="radio" id="male" name="gender" class="form-control"/>
                     <label for="male">Masculino</label>
                 </div>
                 <div class="gender-input">
-                    <input type="radio" id="others" name="gender" th:field="*{gender}" class="form-control"/>
+                    <input type="radio" id="others" name="gender" class="form-control"/>
                     <label for="others">Outros</label>
                 </div>
                 <div class="gender-input">
-                    <input type="radio" id="none" name="gender" th:field="*{gender}" class="form-control"/>
+                    <input type="radio" id="none" name="gender" class="form-control"/>
                     <label for="none">Prefiro não dizer</label>
                 </div>
             </div>
@@ -99,7 +95,6 @@
                             type="text"
                             nome="address"
                             id="address"
-                            th:field="*{address}"
                             class="form-control"
                             placeholder="Digite seu endereço"
                             required
@@ -112,7 +107,6 @@
                             type="text"
                             name="bairro"
                             id="bairro"
-                            th:field="*{address}"
                             class="form-control"
                             placeholder="Digite seu bairro"
                             required
@@ -126,7 +120,6 @@
                             type="text"
                             name="cep"
                             id="cep"
-                            th:field="*{address}"
                             class="form-control"
                             placeholder="Digite seu CEP"
                             required
@@ -139,7 +132,6 @@
                             type="text"
                             name="city"
                             id="city"
-                            th:field="*{address}"
                             class="form-control"
                             placeholder="Digite sua cidade"
                             required
@@ -154,7 +146,6 @@
                             type="text"
                             name="state"
                             id="state"
-                            th:field="*{address}"
                             class="form-control"
                             placeholder="Digite seu estado"
                             required
@@ -167,7 +158,6 @@
                             type="text"
                             name="country"
                             id="country"
-                            th:field="*{address}"
                             class="form-control"
                             placeholder="Digite seu pais"
                             required
@@ -178,12 +168,12 @@
             <div class="input-group">
                 <div class="input-box">
                     <label for="nascimento"><strong>Data de Nascimento</strong></label>
-                    <input type="date" name="nascimento" id="nascimento" th:field="*{nascimento}" required />
+                    <input type="date" name="nascimento" id="nascimento" required />
                 </div>
 
                 <div class="input-box">
                     <label for="estado-civil"><strong>Estado civil</strong></label>
-                    <select name="estado-civil" id="estado-civil" th:field="*{civilStatus}" class="form-control">
+                    <select name="estado-civil" id="estado-civil" class="form-control">
                         <option value="">Casado(a)</option>
                         <option value="">Divorciado(a)</option>
                         <option value="">Viúvo(a)</option>
@@ -198,7 +188,6 @@
                             type="text"
                             name="num-sus"
                             id="num-sus"
-                            th:field="*{sus}"
                             class="form-control"
                             placeholder="Digite o n° do SUS"
                             maxlength="18"
@@ -213,7 +202,6 @@
                             type="text"
                             name="sangue"
                             id="sangue"
-                            th:field="*{bloodType}"
                             class="form-control"
                             placeholder="Digite seu tipo sanguíneo"
                     />
@@ -227,7 +215,6 @@
                             type="password"
                             name="password"
                             id="password"
-                            th:field="*{password}"
                             class="form-control"
                             placeholder="Digite sua senha"
                             minlength="8"
@@ -241,7 +228,6 @@
                             type="password"
                             name="confirmar-senha"
                             id="confirmar-senha"
-                            th:field="*{password}"
                             class="form-control"
                             placeholder="Confirme a senha"
                             minlength="8"
@@ -250,7 +236,7 @@
             </div>
 
             <div class="continue-button">
-                <input type="submit" class="btn btn-primary" value="Enviar" />
+                <button type="submit" class="btn btn-primary"><a href="/login">Enviar</a></button>
             </div>
             <input type="hidden" th:field="*{id}">
         </div>
