@@ -1,6 +1,7 @@
 package com.start.flashmedicproject.controllers;
 
 import com.start.flashmedicproject.models.Paciente;
+import com.start.flashmedicproject.models.User;
 import com.start.flashmedicproject.services.PacienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class PacienteController {
     //Exibe um novo formulário
     @GetMapping("/formPaciente")
     public String formPaciente(Model model){
-        model.addAttribute("pacientes", new Paciente());
+        model.addAttribute("paciente", new Paciente());
         return "formPaciente";
     }
 
@@ -36,7 +37,7 @@ public class PacienteController {
         }
         pacienteService.addPaciente(paciente);
         attributes.addFlashAttribute("mensagem", "Paciente cadastrado com sucesso!");
-        return "login";
+        return "redirect:/login";
     }
 
     //Lista todos os pacientes

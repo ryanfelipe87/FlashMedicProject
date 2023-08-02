@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Inclua os arquivos CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="cadastro.css" />
     <title>Register</title>
 </head>
@@ -15,7 +17,7 @@
                     <h1>Cadastre-se</h1>
                 </div>
             </div>
-            <div class="input-box">
+            <div class="form-group">
                 <label for="name"><strong>Nome</strong></label>
                 <input
                         type="text"
@@ -23,10 +25,9 @@
                         id="name"
                         class="form-control"
                         placeholder="Digite seu nome completo"
-                        required
                 />
             </div>
-            <div class="input-box">
+            <div class="form-group">
                 <label for="email"><strong>Email</strong></label>
                 <input
                         type="text"
@@ -34,213 +35,179 @@
                         id="email"
                         class="form-control"
                         placeholder="Digite seu Email"
-                        required
                 />
             </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="cpf"><strong>CPF</strong></label>
-                    <input
-                            type="text"
-                            name="cpf"
-                            id="cpf"
-                            maxlength="14"
-                            class="form-control"
-                            placeholder="xxx.xxx.xxx-xx"
-                            required
-                    />
-                </div>
-
-                <div class="input-box">
-                    <label for="cellPhone"><strong>Telefone</strong></label>
-                    <input
-                            type="text"
-                            name="telefone"
-                            id="cellPhone"
-                            class="form-control"
-                            placeholder="(xx) xxxxx-xxxx"
-                            required
-                    />
-                </div>
+            <div class="form-group">
+                <label for="cpf"><strong>CPF</strong></label>
+                <input
+                        type="text"
+                        name="cpf"
+                        id="cpf"
+                        maxlength="14"
+                        class="form-control"
+                        placeholder="xxx.xxx.xxx-xx"
+                />
             </div>
-
-            <div class="gender-inputs">
+            <div class="form-group">
+                <label for="cellPhone"><strong>Telefone</strong></label>
+                <input
+                        type="text"
+                        name="telefone"
+                        id="cellPhone"
+                        class="form-control"
+                        placeholder="(xx) xxxxx-xxxx"
+                />
+            </div>
+            <div class="form-group">
                 <div class="gender-title">
                     <h6><strong>Gênero</strong></h6>
                 </div>
-            </div>
-            <div class="gender-group">
-                <div class="gender-input">
-                    <input type="radio" id="female" name="gender" class="form-control"/>
-                    <label for="female">Feminino</label>
+                <div class="form-check">
+                    <input type="radio" id="female" name="gender" class="form-check-input">
+                    <label for="female" class="form-check-label">Feminino</label>
                 </div>
-                <div class="gender-input">
-                    <input type="radio" id="male" name="gender" class="form-control"/>
-                    <label for="male">Masculino</label>
+                <div class="form-check">
+                    <input type="radio" id="male" name="gender" class="form-check-input">
+                    <label for="male" class="form-check-label">Masculino</label>
                 </div>
-                <div class="gender-input">
-                    <input type="radio" id="others" name="gender" class="form-control"/>
-                    <label for="others">Outros</label>
+                <div class="form-check">
+                    <input type="radio" id="others" name="gender" class="form-check-input">
+                    <label for="others" class="form-check-label">Outros</label>
                 </div>
-                <div class="gender-input">
-                    <input type="radio" id="none" name="gender" class="form-control"/>
-                    <label for="none">Prefiro não dizer</label>
+                <div class="form-check">
+                    <input type="radio" id="none" name="gender" class="form-check-input">
+                    <label for="none" class="form-check-label">Prefiro não dizer</label>
                 </div>
             </div>
-
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="address"><strong>Endereço</strong></label>
-                    <input
-                            type="text"
-                            nome="address"
-                            id="address"
-                            class="form-control"
-                            placeholder="Digite seu endereço"
-                            required
-                    />
-                </div>
-
-                <div class="input-box">
-                    <label for="bairro"><strong>Bairro</strong></label>
-                    <input
-                            type="text"
-                            name="bairro"
-                            id="bairro"
-                            class="form-control"
-                            placeholder="Digite seu bairro"
-                            required
-                    />
-                </div>
+            <div class="form-group">
+                <label for="address"><strong>Endereço</strong></label>
+                <input
+                        type="text"
+                        name="address"
+                        id="address"
+                        class="form-control"
+                        placeholder="Digite seu endereço"
+                />
             </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="cep"><strong>CEP</strong></label>
-                    <input
-                            type="text"
-                            name="cep"
-                            id="cep"
-                            class="form-control"
-                            placeholder="Digite seu CEP"
-                            required
-                    />
-                </div>
-
-                <div class="input-box">
-                    <label for="city"><strong>Cidade</strong></label>
-                    <input
-                            type="text"
-                            name="city"
-                            id="city"
-                            class="form-control"
-                            placeholder="Digite sua cidade"
-                            required
-                    />
-                </div>
+            <div class="form-group">
+                <label for="bairro"><strong>Bairro</strong></label>
+                <input
+                        type="text"
+                        name="bairro"
+                        id="bairro"
+                        class="form-control"
+                        placeholder="Digite seu bairro"
+                />
             </div>
-
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="state"><strong>Estado</strong></label>
-                    <input
-                            type="text"
-                            name="state"
-                            id="state"
-                            class="form-control"
-                            placeholder="Digite seu estado"
-                            required
-                    />
-                </div>
-
-                <div class="input-box">
-                    <label for="country"><strong>País</strong></label>
-                    <input
-                            type="text"
-                            name="country"
-                            id="country"
-                            class="form-control"
-                            placeholder="Digite seu pais"
-                            required
-                    />
-                </div>
+            <div class="form-group">
+                <label for="cep"><strong>CEP</strong></label>
+                <input
+                        type="text"
+                        name="cep"
+                        id="cep"
+                        class="form-control"
+                        placeholder="Digite seu CEP"
+                />
             </div>
-
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="nascimento"><strong>Data de Nascimento</strong></label>
-                    <input type="date" name="nascimento" id="nascimento" required />
-                </div>
-
-                <div class="input-box">
-                    <label for="estado-civil"><strong>Estado civil</strong></label>
-                    <select name="estado-civil" id="estado-civil" class="form-control">
-                        <option value="">Casado(a)</option>
-                        <option value="">Divorciado(a)</option>
-                        <option value="">Viúvo(a)</option>
-                        <option value="">Solteiro(a)</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="city"><strong>Cidade</strong></label>
+                <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        class="form-control"
+                        placeholder="Digite sua cidade"
+                />
             </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="num-sus"><strong>Número do SUS</strong></label>
-                    <input
-                            type="text"
-                            name="num-sus"
-                            id="num-sus"
-                            class="form-control"
-                            placeholder="Digite o n° do SUS"
-                            maxlength="18"
-                            pattern="\d{3}\.\d{4}\.\d{4}\.\d{4}"
-                            required
-                    />
-                </div>
-
-                <div class="input-box">
-                    <label for="sangue"><strong>Tipo sanguíneo</strong></label>
-                    <input
-                            type="text"
-                            name="sangue"
-                            id="sangue"
-                            class="form-control"
-                            placeholder="Digite seu tipo sanguíneo"
-                    />
-                </div>
+            <div class="form-group">
+                <label for="state"><strong>Estado</strong></label>
+                <input
+                        type="text"
+                        name="state"
+                        id="state"
+                        class="form-control"
+                        placeholder="Digite seu estado"
+                />
             </div>
-
-            <div class="input-password">
-                <div class="input-box">
-                    <label for="password"><strong>Digite uma senha</strong></label>
-                    <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            class="form-control"
-                            placeholder="Digite sua senha"
-                            minlength="8"
-                            required
-                    />
-                </div>
-
-                <div class="input-box">
-                    <label for="confirmar-senha"><strong>Confirme a senha</strong></label>
-                    <input
-                            type="password"
-                            name="confirmar-senha"
-                            id="confirmar-senha"
-                            class="form-control"
-                            placeholder="Confirme a senha"
-                            minlength="8"
-                    />
-                </div>
+            <div class="form-group">
+                <label for="country"><strong>País</strong></label>
+                <input
+                        type="text"
+                        name="country"
+                        id="country"
+                        class="form-control"
+                        placeholder="Digite seu pais"
+                />
+            </div>
+            <div class="form-group">
+                <label for="nascimento"><strong>Data de Nascimento</strong></label>
+                <input type="date" name="nascimento" id="nascimento" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="estado-civil"><strong>Estado civil</strong></label>
+                <select name="estado-civil" id="estado-civil" class="form-control">
+                    <option value="">Casado(a)</option>
+                    <option value="">Divorciado(a)</option>
+                    <option value="">Viúvo(a)</option>
+                    <option value="">Solteiro(a)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="num-sus"><strong>Número do SUS</strong></label>
+                <input
+                        type="text"
+                        name="num-sus"
+                        id="num-sus"
+                        class="form-control"
+                        placeholder="Digite o n° do SUS"
+                />
+            </div>
+            <div class="form-group">
+                <label for="sangue"><strong>Tipo sanguíneo</strong></label>
+                <input
+                        type="text"
+                        name="sangue"
+                        id="sangue"
+                        class="form-control"
+                        placeholder="Digite seu tipo sanguíneo"
+                />
+            </div>
+            <div class="form-group">
+                <label for="password"><strong>Digite uma senha</strong></label>
+                <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="form-control"
+                        placeholder="Digite sua senha"
+                        minlength="8"
+                        required
+                />
+            </div>
+            <div class="form-group">
+                <label for="confirmar-senha"><strong>Confirme a senha</strong></label>
+                <input
+                        type="password"
+                        name="confirmar-senha"
+                        id="confirmar-senha"
+                        class="form-control"
+                        placeholder="Confirme a senha"
+                        minlength="8"
+                />
+            </div>
+            <div class="form-group">
+                <!-- No bloco do botão "Enviar" -->
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
 
-            <div class="continue-button">
-                <button type="submit" class="btn btn-primary"><a href="/login">Enviar</a></button>
-            </div>
             <input type="hidden" th:field="*{id}">
         </div>
     </form>
 </div>
+
+<!-- Inclua os arquivos JavaScript do Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
