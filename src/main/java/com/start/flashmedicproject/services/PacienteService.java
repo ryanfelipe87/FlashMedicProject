@@ -33,6 +33,13 @@ public class PacienteService {
         return pacienteRepository.save(paciente);
     }
 
+    //Verificação de login do usuário
+    public boolean validarUsuario(String email, String password){
+        Paciente paciente = pacienteRepository.findByEmail(email);
+
+        return paciente != null && paciente.getPassword().equals(password);
+    }
+
     //Atualizando pacientes
     public Paciente updatePaciente(Paciente paciente){
         Optional<Paciente> result = pacienteRepository.findById(paciente.getId());

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background-color: #a5b8bd;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h1{
+    font-family: 'Eczar', serif;
+    color: #00001c;
+    font-size: 35px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item{
+    margin: 0 25px;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.sair-button button{
+    border: none;
+    background-color: #0187a7;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.sair-button button a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+body {
+    background-image: url(fundo-formulario.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form .tela{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.formulario{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 15px;
+    margin-top: 2rem;
+}
+
+.alinhamento{
+    display: flex;
+    margin-top: 0.62rem;
+    padding: 0 0.5rem;
+    margin-bottom: 5rem;
+    margin: 2rem;
+}
+
+.formulario label{
+    font-size: 14px;
+    margin-left: 7rem;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
+.formulario select{
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #00001c;
+    margin-top: 0.5rem;
+    margin-left: 7rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+
+}
+
+.button-atendimento{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.button-atendimento button{
+    background: #72b2c5;
+    border: none;
+    padding: 0.25rem 4rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-right: 5rem;
+    box-shadow: 5px 5px 5px #464646;
+}
+
+.button-atendimento button:hover{
+    background-color: #fff;
+}
+.button-atendimento button a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.93rem;
+    color: #000000c0;
+    text-decoration: none;
+    font-weight: 10;
+}
+
+@media screen and (max-width: 900px) {
+    .user {
+      display: none;
+    }
+
+    .tela {
+      gap: 10px;
+    }
+
+    .alinhamento {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .formulario{
+        display: flex;
+        width: 50%;
+        height: 50%;
+    }
+
+    .textarea{
+        display: flex;
+        width: 5.5rem;
+    }
+
+    .button-atendimento{
+        display: flex;
+        align-items: center;
+    }
+
+  }

@@ -1,16 +1,15 @@
 package com.start.flashmedicproject.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Data
-@Getter @Setter
 @Table(name = "paciente")
 public class Paciente {
 
@@ -40,6 +39,7 @@ public class Paciente {
     private String cellPhone;
 
     @Column
+    @Email
     private String email;
 
     @Column
@@ -52,10 +52,20 @@ public class Paciente {
     private String bloodType;
 
     @Column
+    private int numFicha;
+
+    @Column
     private Timestamp dateRegister;
 
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToMany
+    @JoinTable(
+            name = "paciente_opcao",
+            joinColumns = @JoinColumn(name = "paciente_id"),
+            inverseJoinColumns = @JoinColumn(name = "opcao_id")
+    )
+    private Set<Opcao> opcoes;
 }

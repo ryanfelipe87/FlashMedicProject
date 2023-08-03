@@ -1,10 +1,15 @@
 package com.start.flashmedicproject.controllers;
 
+import com.start.flashmedicproject.models.Opcao;
 import com.start.flashmedicproject.models.Paciente;
 import com.start.flashmedicproject.models.User;
+import com.start.flashmedicproject.repositories.OpcaoRepository;
 import com.start.flashmedicproject.services.PacienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,9 +23,12 @@ import java.util.Optional;
 public class PacienteController {
 
     @Autowired
+    OpcaoRepository opcaoRepository;
+
+    @Autowired
     PacienteService pacienteService;
 
-    //Exibe um novo formulário
+    //Conexão com o form html
     @GetMapping("/formPaciente")
     public String formPaciente(Model model){
         model.addAttribute("paciente", new Paciente());
@@ -38,6 +46,20 @@ public class PacienteController {
         pacienteService.addPaciente(paciente);
         attributes.addFlashAttribute("mensagem", "Paciente cadastrado com sucesso!");
         return "redirect:/login";
+    }
+
+    //Endpoint para inserção dos dados no login e acesso a aba de menu
+    @PostMapping("/menuAtendimento")
+    public ResponseEntity<String> login(Paciente paciente){
+        String email = paciente.getEmail();
+        String password = paciente.getPassword();
+
+        if (pacienteService.validarUsuario(email, password)){
+            return ResponseEntity.ok("Login realizado com sucesso!");
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Crendenciais inválidas!");
+        }
     }
 
     //Lista todos os pacientes
@@ -72,7 +94,7 @@ public class PacienteController {
     }
 
     //Deleta paciente por id
-    @DeleteMapping("pacientes/delete/{id}")
+    @DeleteMapping("/pacientes/delete/{id}")
     public String deletePaciente(@PathVariable Long id){
         pacienteService.deleteById(id);
         return "pacientes";

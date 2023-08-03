@@ -5,8 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Inclua os arquivos CSS do Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="cadastro.css" />
+    <link rel="stylesheet" href="/static/fundo-formulario.css" />
     <title>Register</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: url(fundo-formulario.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 2rem;
+
+}
+body, .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.form-header{
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+.form-header h1::after{
+      content: '';
+      display: block;
+      width: 5rem;
+      height: 0.3rem;
+      background-color: rgba(0, 139, 139, 1);
+      margin: 0 auto;
+      position: absolute;
+      border-radius: 10px;
+}
+.form-header, .titulo{
+    margin-top: -2rem;
+}
+
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+    margin-inline-start: 15px;
+}
+
+ input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #00001c;
+}
+
+.input-box input:hover{
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible{
+    outline: 1px solid rgba(0, 139, 139, 1);
+}
+
+.input-box lable, .gender-title h6{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000c0;
+    margin-right: 18rem;
+}
+
+.input-box input::placeholder{
+    color: #000000be;
+}
+
+.gender-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.gender-input{
+    display: flex;
+    align-items: center;
+}
+.gender-input input{
+    margin-right: 0.2rem;
+    margin-left: 1rem;
+    background: #87CEFA;
+}
+
+.gender-input label{
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.continue-button input{
+    display: flex;
+    align-items: center;
+    display: block;
+    width:  50% ;
+    margin-top: 2.5rem;
+    border: none;
+    background-color: rgba(0, 139, 139, 1);
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 2.5rem;
+    margin-left: 25%;
+
+}
+
+.continue-button input:hover{
+    background-color: greenyellow;
+}
+
+.continue-button input{
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+.input-box select{
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #00001c;
+    margin-top: 0.5rem;
+
+}
+
+.input-password{
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+    .input-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .input-group .input-box {
+      width: 100%;
+    }
+
+    .continue-button {
+      text-align: center;
+    }
+  }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -25,6 +214,7 @@
                         id="name"
                         class="form-control"
                         placeholder="Digite seu nome completo"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -35,6 +225,7 @@
                         id="email"
                         class="form-control"
                         placeholder="Digite seu Email"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -46,16 +237,18 @@
                         maxlength="14"
                         class="form-control"
                         placeholder="xxx.xxx.xxx-xx"
+                        required
                 />
             </div>
             <div class="form-group">
                 <label for="cellPhone"><strong>Telefone</strong></label>
                 <input
                         type="text"
-                        name="telefone"
+                        name="cellPhone"
                         id="cellPhone"
                         class="form-control"
                         placeholder="(xx) xxxxx-xxxx"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -63,19 +256,19 @@
                     <h6><strong>Gênero</strong></h6>
                 </div>
                 <div class="form-check">
-                    <input type="radio" id="female" name="gender" class="form-check-input">
+                    <input type="radio" id="female" name="gender" class="form-check-input" required>
                     <label for="female" class="form-check-label">Feminino</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" id="male" name="gender" class="form-check-input">
+                    <input type="radio" id="male" name="gender" class="form-check-input" required>
                     <label for="male" class="form-check-label">Masculino</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" id="others" name="gender" class="form-check-input">
+                    <input type="radio" id="others" name="gender" class="form-check-input" required>
                     <label for="others" class="form-check-label">Outros</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" id="none" name="gender" class="form-check-input">
+                    <input type="radio" id="none" name="gender" class="form-check-input" required>
                     <label for="none" class="form-check-label">Prefiro não dizer</label>
                 </div>
             </div>
@@ -87,16 +280,18 @@
                         id="address"
                         class="form-control"
                         placeholder="Digite seu endereço"
+                        required
                 />
             </div>
             <div class="form-group">
-                <label for="bairro"><strong>Bairro</strong></label>
+                <label for="address"><strong>Bairro</strong></label>
                 <input
                         type="text"
-                        name="bairro"
+                        name="address"
                         id="bairro"
                         class="form-control"
                         placeholder="Digite seu bairro"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -107,6 +302,7 @@
                         id="cep"
                         class="form-control"
                         placeholder="Digite seu CEP"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -117,6 +313,7 @@
                         id="city"
                         class="form-control"
                         placeholder="Digite sua cidade"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -127,6 +324,7 @@
                         id="state"
                         class="form-control"
                         placeholder="Digite seu estado"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -137,15 +335,16 @@
                         id="country"
                         class="form-control"
                         placeholder="Digite seu pais"
+                        required
                 />
             </div>
             <div class="form-group">
                 <label for="nascimento"><strong>Data de Nascimento</strong></label>
-                <input type="date" name="nascimento" id="nascimento" class="form-control" />
+                <input type="date" name="nascimento" id="nascimento" class="form-control" required/>
             </div>
             <div class="form-group">
-                <label for="estado-civil"><strong>Estado civil</strong></label>
-                <select name="estado-civil" id="estado-civil" class="form-control">
+                <label for="civilStatus"><strong>Estado civil</strong></label>
+                <select name="civilStatus" id="civilStatus" class="form-control">
                     <option value="">Casado(a)</option>
                     <option value="">Divorciado(a)</option>
                     <option value="">Viúvo(a)</option>
@@ -153,23 +352,25 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="num-sus"><strong>Número do SUS</strong></label>
+                <label for="sus"><strong>Número do SUS</strong></label>
                 <input
                         type="text"
-                        name="num-sus"
-                        id="num-sus"
+                        name="sus"
+                        id="sus"
                         class="form-control"
                         placeholder="Digite o n° do SUS"
+                        required
                 />
             </div>
             <div class="form-group">
-                <label for="sangue"><strong>Tipo sanguíneo</strong></label>
+                <label for="bloodType"><strong>Tipo sanguíneo</strong></label>
                 <input
                         type="text"
-                        name="sangue"
-                        id="sangue"
+                        name="bloodType"
+                        id="bloodType"
                         class="form-control"
                         placeholder="Digite seu tipo sanguíneo"
+                        required
                 />
             </div>
             <div class="form-group">
@@ -193,6 +394,7 @@
                         class="form-control"
                         placeholder="Confirme a senha"
                         minlength="8"
+                        required
                 />
             </div>
             <div class="form-group">
