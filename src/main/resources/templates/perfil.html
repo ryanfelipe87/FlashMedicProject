@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/static/perfil.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: url(fundo-perfil.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header{
+    background-color: #fff;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h1{
+    font-family: 'Eczar', serif;
+    color: rgba(0, 139, 139, 1);
+    font-size: 35px;
+}
+.logo img{
+    width: 70px;
+    height: 70px;
+    margin-top: -25px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-left: 20rem;
+}
+
+.nav-item{
+    margin: 0 20px;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.sair-button button{
+    border: none;
+    background-color: #0187a7;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 0.50rem;
+}
+
+.sair-button button a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.sair-button button:hover{
+    background-color: aqua;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #E0E0E0;
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);
+    max-width:900px;
+}
+
+.profile-picture {
+    text-align: left;
+    margin-right: 3rem;
+    margin-bottom: 15rem;
+    align-self: center;
+}
+.profile-info {
+    width: 100%;
+    margin-right: 0;
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007BFF;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.titulo h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile-info p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+
+#name,
+#email,
+#cpf,
+#telefone,
+#genero,
+#endereco,
+#bairro,
+#cep,
+#cidade,
+#estado,
+#pais,
+#data-de-nascimento,
+#estado-civil,
+#numero-do-sus,
+#tipo-sanguineo {
+    font-weight: normal;
+    color: #333;
+}
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    margin-right: 15rem;
+}
+
+.alterar{
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .info-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1>Flash Medic</h1>
+                <img src="logo_flashMedic.png" alt="Logo Flash Medic">
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="/menuAtendimento" class="">Atendimento</a> </li>
+                    <li class="nav-item"><a href="" class="/sobre">Sobre nós</a> </li>
+                </ul>
+            </div>
+
+            <div class="sair-button">
+                <button><a href="/login">Sair</a></button>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="titulo">Perfil do Usuário</h1>
+
+    <div class="profile-container">
+        <div class="profile-picture">
+            <img src="foto-perfil.png" alt="Foto de perfil">
+        </div>
+
+        <div class="profile-info">
+            <div class="info-group">
+                <p><strong>Nome:</strong> <span id="name"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+            </div>
+
+            <div class="info-group">
+                <p><strong>CPF:</strong> <span id="cpf"></span></p>
+                <p><strong>Telefone:</strong> <span id="cellPhone"></span></p>
+            </div>
+
+            <div class="info-group">
+                <p><strong>Gênero:</strong> <span id="gender"></span></p>
+                <p><strong>Endereço:</strong> <span id="address"></span></p>
+            </div>
+
+            <div class="info-group">
+                <p><strong>Bairro:</strong> <span id="bairro"></span></p>
+                <p><strong>CEP:</strong> <span id="cep"></span></p>
+            </div>
+
+            <div class="info-group">
+                <p><strong>Cidade:</strong> <span id="cidade"></span></p>
+                <p><strong>Estado:</strong> <span id="estado"></span></p>
+            </div>
+
+            <div class="info-group">
+                <p><strong>Data de nascimento:</strong> <span id="nascimento"></span></p>
+                <p><strong>País:</strong> <span id="país"></span></p>
+            </div>
+
+            <div class="info-group">
+                <p><strong>Estado Civil:</strong> <span id="civilStatus"></span></p>
+                <p><strong>N° do SUS:</strong> <span id="sus"></span></p>
+            </div>
+
+            <div class="info-group">
+                <p><strong>Tipo sanguíneo:</strong> <span id="bloodType"></span></p>
+            </div>
+
+            <div class="alterar">
+                <a href="#">Alterar</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

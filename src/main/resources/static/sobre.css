@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background-color: #fff;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h1{
+    font-family: 'Eczar', serif;
+    color: rgba(0, 139, 139, 1);
+    font-size: 35px;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+    margin-top: -25px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-left: 25rem;
+}
+
+.nav-item{
+    margin: 0 20px;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.sair-button button{
+    border: none;
+    background-color: #0187a7;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 0.50rem;
+}
+
+.sair-button button a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.sair-button button:hover{
+    background-color: aqua;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(fundo-sobre.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.profile-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-picture img{
+    margin-left: 5rem;
+}
+
+.profile-container h4{
+    font-family: 'Poppins', sans-serif;
+    color: rgba(0, 139, 139, 1);
+}

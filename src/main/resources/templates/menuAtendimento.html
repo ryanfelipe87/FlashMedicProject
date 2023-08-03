@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Flash Medic</title>
     <link rel="stylesheet" href="/static/atendimento.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400&display=swap');
@@ -16,7 +16,7 @@
 }
 
 header{
-    background-color: #a5b8bd;
+    background-color: #fff;
     box-shadow: 0px 3px 10px #464646;
 }
 
@@ -33,8 +33,14 @@ header{
 
 .logo h1{
     font-family: 'Eczar', serif;
-    color: #00001c;
+    color: rgba(0, 139, 139, 1);
     font-size: 35px;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+    margin-top: -25px;
 }
 
 .nav-list{
@@ -46,10 +52,11 @@ header{
     display: flex;
     justify-content: center;
     list-style: none;
+    margin-left: 25rem;
 }
 
 .nav-item{
-    margin: 0 25px;
+    margin: 0 20px;
 }
 
 .nav-link{
@@ -64,6 +71,7 @@ header{
     background-color: #0187a7;
     padding: 10px 15px;
     border-radius: 5px;
+    margin-top: 0.50rem;
 }
 
 .sair-button button a{
@@ -72,8 +80,12 @@ header{
     font-weight: 500;
 }
 
+.sair-button button:hover{
+    background-color: aqua;
+}
+
 body {
-    background-image: url(menu.jpeg);
+    background-image: url(fundo-atendimento.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -126,7 +138,7 @@ body {
 }
 
 .button-atendimento button{
-    background: #72b2c5;
+    background: rgba(32, 178, 208, 1);
     border: none;
     padding: 0.25rem 4rem;
     border-radius: 20px;
@@ -138,7 +150,7 @@ body {
 }
 
 .button-atendimento button:hover{
-    background-color: #fff;
+    background-color: rgba(0, 139, 139, 1);
 }
 .button-atendimento button a{
     font-family: 'Poppins', sans-serif;
@@ -187,13 +199,13 @@ body {
     <nav class="nav-bar">
         <div class="logo">
             <h1>Flash Medic</h1>
+            <img src="logo_flashMedic.png" alt="Logo Flash Medic">
         </div>
 
         <div class="nav-list">
             <ul>
-                <li class="nav-item"><a href="#" class="">Inicio</a> </li>
-                <li class="nav-item"><a href="#" class="">perfil</a> </li>
-                <li class="nav-item"><a href="#" class="">Sobre</a> </li>
+                <li class="nav-item"><a href="/perfil" class="">Perfil</a> </li>
+                <li class="nav-item"><a href="/sobre" class="">Sobre nós</a> </li>
             </ul>
         </div>
 
@@ -204,11 +216,11 @@ body {
 </header>
 <div class="container">
 
-    <form th:action="@{/menuAtendimento}" th:object="${paciente}" class="tela">
+    <form action="/menuAtendimento" th:object="${opcao}" class="tela">
         <div class="alinhamento">
             <div class="formulario">
                 <label for="perguntas">Tem alguma alergia conhecida a medicamentos?</label>
-                <select name="repostas" id="respostas">
+                <select name="resposta" id="resposta">
                     <option value="" disabled selected >Selecione uma opção</option>
                     <option value="">Sim</option>
                     <option value="">Não.</option>
@@ -217,7 +229,7 @@ body {
 
             <div class="formulario">
                 <label for="perguntas">Já foi vacinado contra a gripe este ano?</label>
-                <select name="respostas" id="respostas">
+                <select name="resposta" id="resposta">
                     <option value="" disabled selected >Selecione uma opção</option>
                     <option value="">Sim</option>
                     <option value="">Não.</option>
@@ -229,7 +241,7 @@ body {
         <div class="alinhamento">
             <div class="formulario">
                 <label for="perguntas">Está tomando algum medicamento atualmente?</label>
-                <select name="respostas" id="respostas">
+                <select name="resposta" id="resposta">
                     <option value="" disabled selected >Selecione uma opção</option>
                     <option value="">Sim</option>
                     <option value="">Não.</option>

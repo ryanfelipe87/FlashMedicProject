@@ -45,6 +45,7 @@ public class PacienteController {
         }
         pacienteService.addPaciente(paciente);
         attributes.addFlashAttribute("mensagem", "Paciente cadastrado com sucesso!");
+
         return "redirect:/login";
     }
 

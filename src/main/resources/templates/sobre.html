@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre</title>
+  <link rel="stylesheet" href="/static/sobre.css">
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background-color: #fff;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h1{
+    font-family: 'Eczar', serif;
+    color: rgba(0, 139, 139, 1);
+    font-size: 35px;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+    margin-top: -25px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-left: 25rem;
+}
+
+.nav-item{
+    margin: 0 20px;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.sair-button button{
+    border: none;
+    background-color: #0187a7;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 0.50rem;
+}
+
+.sair-button button a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.sair-button button:hover{
+    background-color: aqua;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(fundo-sobre.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.profile-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-picture img{
+    margin-left: 5rem;
+}
+
+.profile-container h4{
+    font-family: 'Poppins', sans-serif;
+    color: rgba(0, 139, 139, 1);
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1>Flash Medic</h1>
+        <img src="logo_flashMedic.png" alt="Logo Flash Medic">
+      </div>
+
+      <div class="nav-list">
+        <ul>
+          <li class="nav-item"><a href="/perfil" class="">Perfil</a> </li>
+          <li class="nav-item"><a href="/menuAtendimento" class="">Atendimento</a> </li>
+        </ul>
+      </div>
+
+      <div class="sair-button">
+        <button><a href="/login">Sair</a></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <div class="profile-container">
+      <div class="profile-picture">
+        <img src="medicos.avif" alt="Foto de medicos">
+      </div>
+
+      <br>
+
+      <h4>Bem-vindo ao Flash Medic: Transformando o Atendimento Hospitalar</h4>
+
+      <br>
+
+      <p>Você já imaginou a possibilidade de revolucionar a experiência hospitalar, reduzindo o tempo de espera de maneira
+        significativa? Nós também compartilhamos dessa visão!</p>
+
+      <br>
+
+      <p> Apresentamos o Flash Medic, uma inovação disruptiva no campo da saúde que está redefinindo a triagem médica.
+        Imagine poder realizar uma triagem à distância, antes mesmo de chegar ao hospital, utilizando uma plataforma
+        intuitiva e de alta tecnologia.</p>
+
+      <br>
+
+      <h4>Revolução na Triagem Médica</h4>
+
+      <br>
+
+      <p>O Flash Medic é muito mais do que uma simples ferramenta, é uma solução abrangente que visa otimizar o tempo de
+        espera em hospitais, tornando todo o processo mais ágil, eficiente e livre de estresse. Com nosso sistema de triagem
+        online, você pode iniciar sua jornada de cuidados médicos de maneira inteligente e conveniente.</p>
+
+      <br>
+
+      <h4>Benefícios Além da Agilidade</h4>
+
+      <br>
+
+      <p>Ao reduzir o tempo de espera, o Flash Medic contribui diretamente para aliviar a pressão sobre os serviços de
+        emergência. Isso não apenas melhora a eficiência hospitalar, mas também cria uma jornada de atendimento mais
+        segura e tranquila para todos os pacientes. Estamos comprometidos em elevar a qualidade dos cuidados médicos,
+        proporcionando uma experiência que coloca você em primeiro lugar.</p>
+    </div>
+  </div>
+</body>
+</html>
