@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +73,7 @@ input{
       <p class="p1">Seu atendimento foi solicitado com sucesso!</p>
       <br>
       <p>Número da ficha de atendimento:</p>
-      <input type="text" placeholder="n° da ficha">
+      <input type="text" th:field="${paciente.numFicha}" th:value="Ficha" placeholder="n° da ficha">
 
       <div class="continue-button">
         <button><a href="/menuAtendimento">Continuar</a></button>

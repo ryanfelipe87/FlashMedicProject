@@ -52,7 +52,7 @@ public class Paciente {
     private String bloodType;
 
     @Column
-    private int numFicha;
+    private Integer numFicha;
 
     @Column
     private Timestamp dateRegister;
@@ -61,11 +61,4 @@ public class Paciente {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "paciente_opcao",
-            joinColumns = @JoinColumn(name = "paciente_id"),
-            inverseJoinColumns = @JoinColumn(name = "opcao_id")
-    )
-    private Set<Opcao> opcoes;
 }

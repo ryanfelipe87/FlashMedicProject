@@ -1,15 +1,10 @@
 package com.start.flashmedicproject.controllers;
 
-import com.start.flashmedicproject.models.Opcao;
 import com.start.flashmedicproject.models.Paciente;
-import com.start.flashmedicproject.models.User;
-import com.start.flashmedicproject.repositories.OpcaoRepository;
+import com.start.flashmedicproject.services.FichaAtendimentoService;
 import com.start.flashmedicproject.services.PacienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,7 +18,7 @@ import java.util.Optional;
 public class PacienteController {
 
     @Autowired
-    OpcaoRepository opcaoRepository;
+    FichaAtendimentoService fichaAtendimentoService;
 
     @Autowired
     PacienteService pacienteService;
@@ -49,22 +44,33 @@ public class PacienteController {
         return "redirect:/login";
     }
 
-    //Endpoint para inserção dos dados no login e acesso a aba de menu
-    @PostMapping("/menuAtendimento")
-    public ResponseEntity<String> login(Paciente paciente){
+    //Endpoint para validação dos dados no login e acesso a aba de menu
+    @PostMapping("/loginUser")
+    public String loginUser(@ModelAttribute Paciente paciente, Model model) {
         String email = paciente.getEmail();
         String password = paciente.getPassword();
 
-        if (pacienteService.validarUsuario(email, password)){
-            return ResponseEntity.ok("Login realizado com sucesso!");
+        if (pacienteService.validarUsuario(email, password)) {
+            // Redirecionar para a página de menu após o login bem-sucedido
+            return "redirect:/menuAtendimento";
         }
+
         else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Crendenciais inválidas!");
+            // Adicionar mensagem de erro ao modelo
+            model.addAttribute("error", "Credenciais inválidas!");
+            model.addAttribute("pacientes", new Paciente());
+            return "login"; // Página de login
         }
     }
 
+    //Endpoint para inserção dos dados de solicitação de atendimento
+    @GetMapping("/ficha")
+    public Integer getNextService(){
+        return fichaAtendimentoService.generateNextFicha();
+    }
+    
     //Lista todos os pacientes
-    @GetMapping("/pacientes/list")
+    @GetMapping("/perfil/list")
     public ModelAndView findAll(){
         //Renderiza para a página de index onde aparecem os dados da lista
         ModelAndView mv = new ModelAndView("login");
@@ -76,28 +82,28 @@ public class PacienteController {
     }
 
     //Edita paciente por id
-    @GetMapping("/pacientes/edit/{id}")
+    @GetMapping("/perfil/edit/{id}")
     public String EditPaciente(@PathVariable Long id, Model model) {
         Optional<Paciente> result = Optional.ofNullable(pacienteService.findPacienteById(id));
         if (result.isPresent()) {
             model.addAttribute("paciente", result.get());
             return "EditPaciente";
         } else {
-            return "pacientes";
+            return "perfil";
         }
     }
     //Atualiza dados do paciente
-    @PutMapping("/pacientes/update/{id}")
+    @PutMapping("/perfil/update/{id}")
     public String updatePaciente(@PathVariable Long id, @ModelAttribute Paciente paciente){
         paciente.setId(id);
         pacienteService.updatePaciente(paciente);
-        return "pacientes";
+        return "perfil";
     }
 
     //Deleta paciente por id
-    @DeleteMapping("/pacientes/delete/{id}")
+    @DeleteMapping("/perfil/delete/{id}")
     public String deletePaciente(@PathVariable Long id){
         pacienteService.deleteById(id);
-        return "pacientes";
+        return "perfil";
     }
 }

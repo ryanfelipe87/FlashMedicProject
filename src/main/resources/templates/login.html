@@ -8,185 +8,192 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-body{
-    background-image: url(login2.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:20px;
-    min-height: 100vh;
-}
-.w50{
-    width: 50%;
-    float: left;
-    padding-right: 15px;
-}
-.box{
-    display: flex;
-    width: 1030px;
-}
-.img-box{
-    background-color: #fff;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-radius: 20px 0 0 20px;
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background-image: url(login2.jpeg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:20px;
+            min-height: 100vh;
+        }
+        .w50{
+            width: 50%;
+            float: left;
+            padding-right: 15px;
+        }
+        .box{
+            display: flex;
+            width: 1030px;
+        }
+        .img-box{
+            background-color: #fff;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 20px 0 0 20px;
 
-}
-.img-box{
-    width: 100%;
-}
-.form-box{
-    background-color: #fff;
-    backdrop-filter: blur(40px);
-    padding: 30px 10px;
-    width: 80%;
-    border-radius: 0 20px 20px 0;
-}
+        }
+        .img-box{
+            width: 100%;
+        }
+        .form-box{
+            background-color: #fff;
+            backdrop-filter: blur(40px);
+            padding: 30px 10px;
+            width: 80%;
+            border-radius: 0 20px 20px 0;
+        }
 
-.form-box form{
-    margin: 20px 0;
-}
-.input-group{
-    margin-bottom: 15px;
-    font-size: 10px;
-}
-.input-group{
-    color: #3d3d3d;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.input-group input{
-    width: 100%;
-    height: 47px;
-    background-color: rgba(255, 255, 255, 0.32);
-    border-radius: 20px;
-    outline: none;
-    border: 2px solid transparent;
-    padding: 15px;
-    font-size: 0.5rem 2rem;
-    color: #616161;
-    transition: all 0.4s ease;
-}
-.input-group input:focus{
-    border-color: rgba(0, 139, 139, 1);
-}
-.button-entrar button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.button-entrar button{
-    margin-left: 1rem;
-    background: rgba(0, 139, 139, 1);
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    padding: 0.25rem 10rem;
-}
-.button-entrar button a{
-    font-size: 0.93rem;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-}
-.input-group input a{
-    font-size: 0.93rem;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-}
-.button-entrar button:hover{
-     background-color: aquamarine;
-}
+        .form-box form{
+            margin: 20px 0;
+        }
+        .input-group{
+            margin-bottom: 15px;
+            font-size: 10px;
+        }
+        .input-group{
+            color: #3d3d3d;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .input-group input{
+            width: 100%;
+            height: 47px;
+            background-color: rgba(255, 255, 255, 0.32);
+            border-radius: 20px;
+            outline: none;
+            border: 2px solid transparent;
+            padding: 15px;
+            font-size: 0.5rem 2rem;
+            color: #616161;
+            transition: all 0.4s ease;
+        }
+        .input-group input:focus{
+            border-color: rgba(0, 139, 139, 1);
+        }
+        .button-entrar button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .button-entrar button{
+            margin-left: 1rem;
+            background: rgba(0, 139, 139, 1);
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem 10rem;
+        }
+        .button-entrar button a{
+            font-size: 0.93rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .input-group input a{
+            font-size: 0.93rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .button-entrar button:hover{
+             background-color: aquamarine;
+        }
 
-.input-group label{
-    font-size: 0.9rem;
-}
+        .input-group label{
+            font-size: 0.9rem;
+        }
 
-.input-group p{
-    display: flex;
-    align-items: center;
-    font-size: 0.6rem;
-    margin-left: 20rem;
-}
+        .input-group p{
+            display: flex;
+            align-items: center;
+            font-size: 0.6rem;
+            margin-left: 20rem;
+        }
 
-.cadastro-button{
-    display: flex;
-    align-items:center;
-    justify-content: center;
-}
-.cadastro-button button{
-    background: rgba(0, 139, 139, 1);
-    border: none;
-    padding: 0.25rem 4rem;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 0.9rem;
-}
-.cadastro-button button a{
-    font-size: 0.93rem;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-}
+        .cadastro-button{
+            display: flex;
+            align-items:center;
+            justify-content: center;
+        }
+        .cadastro-button button{
+            background: rgba(0, 139, 139, 1);
+            border: none;
+            padding: 0.25rem 4rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 0.9rem;
+        }
+        .cadastro-button button a{
+            font-size: 0.93rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-.cadastro-button button:hover{
-    background-color: aquamarine;
-}
-.input-group button:hover{
-    background-color:#ADD8E6;
-}
+        .cadastro-button button:hover{
+            background-color: aquamarine;
+        }
+        .input-group button:hover{
+            background-color:#ADD8E6;
+        }
 
-@media screen and (max-width: 600px) {
-    .img-box img {
-      display: none;
-    }
-    .box{
-        width: 50%;
-    }
-    .form{
-        width: 100%;
-    }
+        @media screen and (max-width: 600px) {
+            .img-box img {
+              display: none;
+            }
+            .box{
+                width: 50%;
+            }
+            .form{
+                width: 100%;
+            }
 
-}
+        }
 
-@media screen and (max-width:600px){
+        @media screen and (max-width:600px){
 
-     .box{
-        width: 90%;
-        height: auto;
-     }
-     .form-box{
-        width: 90%;
-        height: auto;
-     }
-     .input-group p{
-        width: 25%;
-    }
-    .button-entrar input{
-        padding: 0.25rem 5rem;
-        margin-right: 0.4rem;
-    }
-    .cadastro-button input{
-        padding: 0.25rem 0.70rem;
-    }
-    .input-group p{
-        font-size: 8px;
-        margin-right: 50%;
-    }
-}
+             .box{
+                width: 90%;
+                height: auto;
+             }
+             .form-box{
+                width: 90%;
+                height: auto;
+             }
+             .input-group p{
+                width: 25%;
+            }
+            .button-entrar input{
+                padding: 0.25rem 5rem;
+                margin-right: 0.4rem;
+            }
+            .cadastro-button input{
+                padding: 0.25rem 0.70rem;
+            }
+            .input-group p{
+                font-size: 8px;
+                margin-right: 50%;
+            }
+        }
+        .error-message {
+            color: red; /* Define a cor do texto de erro como vermelho */
+            font-size: 14px; /* Define o tamanho da fonte do texto de erro */
+            margin-top: 10px; /* Define a margem superior para afastar do campo de login */
+        }
     </style>
+
+
 </head>
 <body>
 <div class="box">
@@ -194,7 +201,11 @@ body{
         <img src="login.jpeg" />
         <div class="form-box">
             <img src="TítuloLogin.jpeg" />
-            <form action="/login" th:object="${pacientes}" method="post">
+            <!-- Adicione esse bloco para exibir a mensagem de erro -->
+            <div th:if="${error}" class="error-message">
+                <p th:text="${error}"></p>
+            </div>
+            <form action="/loginUser" th:object="${pacientes}" method="post" id="formularioLogin">
                 <div class="row">
                     <div class="input-group">
                         <label for="email" class="col-form-label"> Usuário</label>
@@ -222,7 +233,7 @@ body{
                     </div>
 
                     <div class="button-entrar">
-                        <button type="submit" class="btn btn-primary" ><a href="/menuAtendimento">Entrar</a></button>
+                        <button type="submit" class="btn btn-primary" ><a href="/loginUser">Entrar</a></button>
                     </div>
 
                     <div class="cadastro-button">
@@ -233,5 +244,6 @@ body{
         </div>
     </div>
 </div>
+<!--<script src="/js/login.js"></script>-->
 </body>
 </html>

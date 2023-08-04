@@ -216,7 +216,7 @@ body {
 </header>
 <div class="container">
 
-    <form action="/menuAtendimento" th:object="${opcao}" class="tela">
+    <form action="/menuAtendimento" th:object="${pacientes}" class="tela">
         <div class="alinhamento">
             <div class="formulario">
                 <label for="perguntas">Tem alguma alergia conhecida a medicamentos?</label>
@@ -322,7 +322,7 @@ body {
 
 
         <div class="button-atendimento">
-            <button><a href="#">Solicitar atendimento</a></button>
+            <button><a href="/ficha">Solicitar atendimento</a></button>
         </div>
 
 
