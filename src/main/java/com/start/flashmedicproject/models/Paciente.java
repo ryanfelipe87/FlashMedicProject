@@ -6,7 +6,7 @@ import lombok.Data;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -36,6 +36,21 @@ public class Paciente {
     private String address;
 
     @Column
+    private String bairro;
+
+    @Column
+    private String cep;
+
+    @Column
+    private String city;
+
+    @Column
+    private String state;
+
+    @Column
+    private String country;
+
+    @Column
     private String cellPhone;
 
     @Column
@@ -52,7 +67,7 @@ public class Paciente {
     private String bloodType;
 
     @Column
-    private Integer numFicha;
+    private Integer numberFicha;
 
     @Column
     private Timestamp dateRegister;
@@ -61,4 +76,7 @@ public class Paciente {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToMany
+    @JoinColumn(name = "number_ficha_id")
+    private List<GenerateNumber> generateNumber;
 }

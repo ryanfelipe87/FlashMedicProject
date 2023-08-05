@@ -46,6 +46,11 @@ public class PacienteService {
         existing.setName(paciente.getName());
         existing.setNascimento(paciente.getNascimento());
         existing.setAddress(paciente.getAddress());
+        existing.setBairro(paciente.getBairro());
+        existing.setCep(paciente.getCep());
+        existing.setCity(paciente.getCity());
+        existing.setState(paciente.getState());
+        existing.setCountry(paciente.getCountry());
         existing.setCellPhone(paciente.getCellPhone());
         existing.setCpf(paciente.getCpf());
         existing.setSus(paciente.getSus());

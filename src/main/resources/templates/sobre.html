@@ -6,10 +6,19 @@
   <title>Sobre</title>
   <link rel="stylesheet" href="/static/sobre.css">
   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
     *{
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url(fundo-sobre.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header{
@@ -59,7 +68,7 @@ header{
 .nav-link{
     text-decoration: none;
     font-size: 1.15rem;
-    color: #fff;
+    color: rgba(0, 139, 139, 1);;
     font-weight: 400;
 }
 
@@ -88,10 +97,6 @@ header{
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url(fundo-sobre.avif);
-    background-size: cover;
-    background-repeat: no-repeat;
-
 }
 
 .profile-container {
@@ -125,8 +130,8 @@ header{
 
       <div class="nav-list">
         <ul>
-          <li class="nav-item"><a href="/perfil" class="">Perfil</a> </li>
-          <li class="nav-item"><a href="/menuAtendimento" class="">Atendimento</a> </li>
+          <li class="nav-item"><a href="/perfil" class="nav-link">Perfil</a> </li>
+          <li class="nav-item"><a href="/menuAtendimento" class="nav-link">Atendimento</a> </li>
         </ul>
       </div>
 

@@ -41,7 +41,7 @@ input{
 
 
 .continue-button {
-    margin-top: 60px;
+    margin-top: 45px;
     text-align: center;
 }
 
@@ -68,19 +68,20 @@ input{
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="conteudo">
-      <p class="p1">Seu atendimento foi solicitado com sucesso!</p>
-      <br>
-      <p>Número da ficha de atendimento:</p>
-      <input type="text" th:field="${paciente.numFicha}" th:value="Ficha" placeholder="n° da ficha">
+  <form action="/ficha" method="get">
+    <div class="container">
+      <div class="conteudo">
+        <p class="p1">Seu atendimento foi solicitado com sucesso!</p>
+        <br>
+        <p>Número da ficha de atendimento: <span th:text="${numberFicha}"></span></p>
+        <br>
+        <p>Dirija-se ao hospital mais próximo</p>
 
-      <div class="continue-button">
-        <button><a href="/menuAtendimento">Continuar</a></button>
+        <div class="continue-button">
+          <button><a href="/menuAtendimento">Continuar</a></button>
+        </div>
       </div>
     </div>
-
-  </div>
-
+  </form>
 </body>
 </html>

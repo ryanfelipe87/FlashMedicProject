@@ -1,7 +1,8 @@
 package com.start.flashmedicproject.controllers;
 
+import com.start.flashmedicproject.models.GenerateNumber;
 import com.start.flashmedicproject.models.Paciente;
-import com.start.flashmedicproject.services.FichaAtendimentoService;
+import com.start.flashmedicproject.repositories.PacienteRepository;
 import com.start.flashmedicproject.services.PacienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,15 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Optional;
 
 @Controller
 public class PacienteController {
 
     @Autowired
-    FichaAtendimentoService fichaAtendimentoService;
+    PacienteRepository pacienteRepository;
 
     @Autowired
     PacienteService pacienteService;
@@ -38,7 +41,11 @@ public class PacienteController {
             attributes.addFlashAttribute("mensagem", "Verifique os campos");
             return "formPaciente";
         }
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+        paciente.setDateRegister(timestamp);
         pacienteService.addPaciente(paciente);
+
         attributes.addFlashAttribute("mensagem", "Paciente cadastrado com sucesso!");
 
         return "redirect:/login";
@@ -63,12 +70,24 @@ public class PacienteController {
         }
     }
 
-    //Endpoint para inserção dos dados de solicitação de atendimento
-    @GetMapping("/ficha")
-    public Integer getNextService(){
-        return fichaAtendimentoService.generateNextFicha();
+    @PostMapping("/ficha")
+    public String updateNumberFicha(@RequestParam Long id, @RequestParam int numberFicha, Model model) {
+        numberFicha = GenerateNumber.generateNextFicha();
+
+        // Verifica se o paciente existe com o ID fornecido
+        Paciente paciente = pacienteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Paciente não encontrado com este ID!"));
+
+        // Atualiza o número da ficha
+        paciente.setNumberFicha(numberFicha);
+
+        // Salva a ficha atualizada no banco de dados
+        pacienteRepository.save(paciente);
+
+        model.addAttribute("numberFicha", numberFicha);
+        return "ficha";
     }
-    
+
     //Lista todos os pacientes
     @GetMapping("/perfil/list")
     public ModelAndView findAll(){

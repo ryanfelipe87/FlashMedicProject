@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/perfil.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
 
 *{
     padding: 0;
@@ -65,7 +65,7 @@ header{
 .nav-link{
     text-decoration: none;
     font-size: 1.15rem;
-    color: #fff;
+    color: rgba(0, 139, 139, 1);;
     font-weight: 400;
 }
 
@@ -188,8 +188,8 @@ header{
 
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="/menuAtendimento" class="">Atendimento</a> </li>
-                    <li class="nav-item"><a href="/sobre" class="">Sobre</a> </li>
+                    <li class="nav-item"><a href="/menuAtendimento" class="nav-link">Atendimento</a> </li>
+                    <li class="nav-item"><a href="/sobre" class="nav-link">Sobre</a> </li>
                 </ul>
             </div>
 
@@ -208,42 +208,42 @@ header{
 
         <div class="profile-info">
             <div class="info-group">
-                <p><strong>Nome:</strong> <span id="name"></span></p>
-                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Nome:</strong> <span id="name" th:text="${paciente.name}"></span></p>
+                <p><strong>Email:</strong> <span id="email" th:text="${paciente.email}"></span></p>
             </div>
 
             <div class="info-group">
-                <p><strong>CPF:</strong> <span id="cpf"></span></p>
-                <p><strong>Telefone:</strong> <span id="cellPhone"></span></p>
+                <p><strong>CPF:</strong> <span id="cpf" th:text="${paciente.cpf}"></span></p>
+                <p><strong>Telefone:</strong> <span id="cellPhone" th:text="${paciente.cellPhone}"></span></p>
             </div>
 
             <div class="info-group">
-                <p><strong>Gênero:</strong> <span id="gender"></span></p>
-                <p><strong>Endereço:</strong> <span id="address"></span></p>
+                <p><strong>Gênero:</strong> <span id="gender" th:text="${paciente.gender}"></span></p>
+                <p><strong>Endereço:</strong> <span id="address" th:text="${paciente.address}"></span></p>
             </div>
 
             <div class="info-group">
-                <p><strong>Bairro:</strong> <span id="bairro"></span></p>
-                <p><strong>CEP:</strong> <span id="cep"></span></p>
+                <p><strong>Bairro:</strong> <span id="bairro" th:text="${paciente.bairro}"></span></p>
+                <p><strong>CEP:</strong> <span id="cep" th:text="${paciente.cep}"></span></p>
             </div>
 
             <div class="info-group">
-                <p><strong>Cidade:</strong> <span id="cidade"></span></p>
-                <p><strong>Estado:</strong> <span id="estado"></span></p>
+                <p><strong>Cidade:</strong> <span id="cidade" th:text="${paciente.city}"></span></p>
+                <p><strong>Estado:</strong> <span id="estado" th:text="${paciente.state}"></span></p>
             </div>
 
             <div class="info-group">
-                <p><strong>Data de nascimento:</strong> <span id="nascimento"></span></p>
-                <p><strong>País:</strong> <span id="país"></span></p>
+                <p><strong>Data de nascimento:</strong> <span id="nascimento" th:text="${paciente.nascimento}"></span></p>
+                <p><strong>País:</strong> <span id="país" th:text="${paciente.country}"></span></p>
             </div>
 
             <div class="info-group">
-                <p><strong>Estado Civil:</strong> <span id="civilStatus"></span></p>
-                <p><strong>N° do SUS:</strong> <span id="sus"></span></p>
+                <p><strong>Estado Civil:</strong> <span id="civilStatus" th:text="${paciente.civilStatus}"></span></p>
+                <p><strong>N° do SUS:</strong> <span id="sus" th:text="${paciente.sus}"></span></p>
             </div>
 
             <div class="info-group">
-                <p><strong>Tipo sanguíneo:</strong> <span id="bloodType"></span></p>
+                <p><strong>Tipo sanguíneo:</strong> <span id="bloodType" th:text="${paciente.bloodType}"></span></p>
             </div>
 
             <div class="alterar">
