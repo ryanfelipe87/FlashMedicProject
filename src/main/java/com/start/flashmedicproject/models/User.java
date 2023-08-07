@@ -1,9 +1,8 @@
 package com.start.flashmedicproject.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Data;
-
-import java.sql.Timestamp;
 
 @Entity
 @Data
@@ -11,14 +10,17 @@ import java.sql.Timestamp;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private Timestamp dateRegister;
+    @Email
+    private String email;
 
-    @OneToOne
-    @JoinColumn(name = "paciente_id")
+    @Column
+    private String password;
+
+    @OneToOne(mappedBy = "user")
     private Paciente paciente;
 
 }

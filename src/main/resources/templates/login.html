@@ -201,11 +201,15 @@
         <img src="login.jpeg" />
         <div class="form-box">
             <img src="TítuloLogin.jpeg" />
-            <!-- Adicione esse bloco para exibir a mensagem de erro -->
-            <div th:if="${error}" class="error-message">
-                <p th:text="${error}"></p>
+            <!-- Bloco para exibir a mensagem de erro -->
+            <div th:if="${error_login}" class="error-message">
+                <p th:text="${error_login}"></p>
             </div>
-            <form action="/loginUser" th:object="${pacientes}" method="post" id="formularioLogin">
+            <!-- Bloco para exibir e mensagem de sucesso -->
+            <div th:if="${success_register}" class="success-message">
+                <p th:text="${success_register}"></p>
+            </div>
+            <form action="/loginUser" th:object="${user}" method="post" id="formularioLogin">
                 <div class="row">
                     <div class="input-group">
                         <label for="email" class="col-form-label"> Usuário</label>
@@ -229,7 +233,7 @@
                     </div>
 
                     <div class="button-entrar">
-                        <button type="submit" class="btn btn-primary" ><a href="/loginUser">Entrar</a></button>
+                        <button style="color: white;" type="submit" class="btn btn-primary" >Entrar</button>
                     </div>
 
                     <div class="cadastro-button">

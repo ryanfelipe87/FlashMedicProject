@@ -162,14 +162,6 @@ header{
     margin-right: 15rem;
 }
 
-.alterar{
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1rem;
-    margin-right: 1rem;
-}
-
 @media screen and (max-width: 600px) {
     .info-group {
         flex-direction: column;
@@ -209,7 +201,7 @@ header{
         <div class="profile-info">
             <div class="info-group">
                 <p><strong>Nome:</strong> <span id="name" th:text="${paciente.name}"></span></p>
-                <p><strong>Email:</strong> <span id="email" th:text="${paciente.email}"></span></p>
+                <p><strong>Email:</strong> <span id="email" th:text="${paciente.user.email}"></span></p>
             </div>
 
             <div class="info-group">
@@ -223,7 +215,7 @@ header{
             </div>
 
             <div class="info-group">
-                <p><strong>Bairro:</strong> <span id="bairro" th:text="${paciente.bairro}"></span></p>
+                <p><strong>Bairro:</strong> <span id="bairro" th:text="${paciente.neighborhood}"></span></p>
                 <p><strong>CEP:</strong> <span id="cep" th:text="${paciente.cep}"></span></p>
             </div>
 
@@ -233,7 +225,7 @@ header{
             </div>
 
             <div class="info-group">
-                <p><strong>Data de nascimento:</strong> <span id="nascimento" th:text="${paciente.nascimento}"></span></p>
+                <p><strong>Data de nascimento:</strong> <span id="dataNascimento" th:text="${paciente.dataNascimento}"></span></p>
                 <p><strong>País:</strong> <span id="país" th:text="${paciente.country}"></span></p>
             </div>
 
@@ -245,11 +237,6 @@ header{
             <div class="info-group">
                 <p><strong>Tipo sanguíneo:</strong> <span id="bloodType" th:text="${paciente.bloodType}"></span></p>
             </div>
-
-            <div class="alterar">
-                <a href="#">Alterar</a>
-            </div>
-
         </div>
     </div>
 </body>

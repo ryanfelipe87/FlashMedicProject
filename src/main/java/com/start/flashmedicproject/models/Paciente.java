@@ -1,27 +1,25 @@
 package com.start.flashmedicproject.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.Data;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
 @Table(name = "paciente")
-public class Paciente {
+public class Paciente extends Endereco{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
     private String name;
 
     @Column
-    private LocalDate nascimento;
+    private LocalDate dataNascimento;
 
     @Column
     private String cpf;
@@ -33,32 +31,7 @@ public class Paciente {
     private String gender;
 
     @Column
-    private String address;
-
-    @Column
-    private String bairro;
-
-    @Column
-    private String cep;
-
-    @Column
-    private String city;
-
-    @Column
-    private String state;
-
-    @Column
-    private String country;
-
-    @Column
     private String cellPhone;
-
-    @Column
-    @Email
-    private String email;
-
-    @Column
-    private String password;
 
     @Column
     private String sus;
@@ -67,16 +40,13 @@ public class Paciente {
     private String bloodType;
 
     @Column
-    private Integer numberFicha;
+    private String numberFicha;
 
     @Column
-    private Timestamp dateRegister;
+    private LocalDateTime dateRegister;
 
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany
-    @JoinColumn(name = "number_ficha_id")
-    private List<GenerateNumber> generateNumber;
 }
