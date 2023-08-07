@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
 
 *{
     margin: 0;
@@ -7,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-image: url(fundo-formulario.jpeg);
+    background-image: url(css-register.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0;
@@ -78,10 +78,11 @@ form{
 
  input{
     margin: 0.6rem 0;
-    padding: 0.8rem 2rem;
+    padding: 8rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #00001c;
+    text-align: left;
 }
 
 .input-box input:hover{
@@ -101,6 +102,11 @@ form{
 
 .input-box input::placeholder{
     color: #000000be;
+}
+
+.form-control{
+    text-align: left;
+    padding-left: 10px;
 }
 
 .gender-group{

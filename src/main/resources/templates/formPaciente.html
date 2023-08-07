@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Inclua os arquivos CSS do Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/fundo-formulario.css" />
-    <title>Register</title>
+    <link rel="stylesheet" href="/static/register.css"/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
 
 *{
     margin: 0;
@@ -17,7 +16,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-image: url(fundo-formulario.jpeg);
+    background-image: url(css-register.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0;
@@ -88,10 +87,11 @@ form{
 
  input{
     margin: 0.6rem 0;
-    padding: 0.8rem 2rem;
+    padding: 8rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #00001c;
+    text-align: left;
 }
 
 .input-box input:hover{
@@ -111,6 +111,11 @@ form{
 
 .input-box input::placeholder{
     color: #000000be;
+}
+
+.form-control{
+    text-align: left;
+    padding-left: 10px;
 }
 
 .gender-group{
@@ -196,6 +201,7 @@ form{
     }
   }
     </style>
+    <title>Register</title>
 </head>
 <body>
 <div class="container">
@@ -206,7 +212,7 @@ form{
                     <h1>Cadastre-se</h1>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="name"><strong>Nome</strong></label>
                 <input
                         type="text"
@@ -216,7 +222,7 @@ form{
                         placeholder="Digite seu nome completo"
                 />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="email"><strong>Email</strong></label>
                 <input
                         type="text"
@@ -226,7 +232,8 @@ form{
                         placeholder="Digite seu Email"
                 />
             </div>
-            <div class="form-group">
+            <div class="input-group">
+            <div class="input-box">
                 <label for="cpf"><strong>CPF</strong></label>
                 <input
                         type="text"
@@ -237,7 +244,7 @@ form{
                         placeholder="xxx.xxx.xxx-xx"
                 />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="cellPhone"><strong>Telefone</strong></label>
                 <input
                         type="text"
@@ -247,28 +254,32 @@ form{
                         placeholder="(xx) xxxxx-xxxx"
                 />
             </div>
-            <div class="form-group">
+            </div>
+            <div class="gender-inputs">
                 <div class="gender-title">
                     <h6><strong>Gênero</strong></h6>
                 </div>
-                <div class="form-check">
+                <div class="gender-group">
+                <div class="gender-input">
                     <input type="radio" id="female" name="gender" th:field="${registerPacienteDto.gender}" th:value="Feminino" required />
                     <label for="female" class="form-check-label">Feminino</label>
                 </div>
-                <div class="form-check">
+                <div class="gender-input">
                     <input type="radio" id="male" name="gender" th:field="${registerPacienteDto.gender}" th:value="Masculino" required/>
                     <label for="male" class="form-check-label">Masculino</label>
                 </div>
-                <div class="form-check">
+                <div class="gender-input">
                     <input type="radio" id="others" name="gender" th:field="${registerPacienteDto.gender}" th:value="Outros" required />
                     <label for="others" class="form-check-label">Outros</label>
                 </div>
-                <div class="form-check">
+                <div class="gender-input">
                     <input type="radio" id="none" name="gender" th:field="${registerPacienteDto.gender}" th:value="NaoDizer" required />
                     <label for="none" class="form-check-label">Prefiro não dizer</label>
                 </div>
             </div>
-            <div class="form-group">
+            </div>
+            <div class="input-group">
+            <div class="input-box">
                 <label for="address"><strong>Endereço</strong></label>
                 <input
                         type="text"
@@ -279,7 +290,7 @@ form{
 
                 />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="neighborhood"><strong>Bairro</strong></label>
                 <input
                         type="text"
@@ -289,7 +300,9 @@ form{
                         placeholder="Digite seu bairro"
                 />
             </div>
-            <div class="form-group">
+            </div>
+            <div class="input-group">
+            <div class="input-box">
                 <label for="cep"><strong>CEP</strong></label>
                 <input
                         type="text"
@@ -299,7 +312,7 @@ form{
                         placeholder="Digite seu CEP"
                 />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="city"><strong>Cidade</strong></label>
                 <input
                         type="text"
@@ -309,7 +322,9 @@ form{
                         placeholder="Digite sua cidade"
                 />
             </div>
-            <div class="form-group">
+            </div>
+            <div class="input-group">
+            <div class="input-box">
                 <label for="state"><strong>Estado</strong></label>
                 <input
                         type="text"
@@ -319,7 +334,7 @@ form{
                         placeholder="Digite seu estado"
                 />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="country"><strong>País</strong></label>
                 <input
                         type="text"
@@ -329,11 +344,13 @@ form{
                         placeholder="Digite seu pais"
                 />
             </div>
-            <div class="form-group">
+            </div>
+            <div class="input-group">
+            <div class="input-box">
                 <label for="dataNascimento"><strong>Data de Nascimento</strong></label>
                 <input type="date" name="dataNascimento" id="dataNascimento" class="form-control" />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="civilStatus"><strong>Estado civil</strong></label>
                 <select name="civilStatus" id="civilStatus" th:field="*{civilStatus}" class="form-control">
                     <option value="Casado(a)">Casado(a)</option>
@@ -342,7 +359,9 @@ form{
                     <option value="Solteiro(a)">Solteiro(a)</option>
                 </select>
             </div>
-            <div class="form-group">
+            </div>
+            <div class="input-group">
+            <div class="input-box">
                 <label for="sus"><strong>Número do SUS</strong></label>
                 <input
                         type="text"
@@ -352,7 +371,7 @@ form{
                         placeholder="Digite o n° do SUS"
                 />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="bloodType"><strong>Tipo sanguíneo</strong></label>
                 <input
                         type="text"
@@ -362,7 +381,8 @@ form{
                         placeholder="Digite seu tipo sanguíneo"
                 />
             </div>
-            <div class="form-group">
+            </div>
+            <div class="input-box">
                 <label for="password"><strong>Digite uma senha</strong></label>
                 <input
                         type="password"
@@ -373,7 +393,7 @@ form{
                         minlength="8"
                 />
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label for="confirmar-senha"><strong>Confirme a senha</strong></label>
                 <input
                         type="password"
@@ -384,7 +404,7 @@ form{
                         minlength="8"
                 />
             </div>
-            <div class="form-group">
+            <div class="continue-button">
                 <!-- No bloco do botão "Enviar" -->
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
